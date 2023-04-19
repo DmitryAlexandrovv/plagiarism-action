@@ -1,4 +1,4 @@
-import { getInput, setFailed } from "@actions/core";
+import { debug, getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import stripAnsi from "strip-ansi";
 import { v4 } from "uuid";
