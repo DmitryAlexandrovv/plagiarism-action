@@ -1,12 +1,9 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const stripAnsi = require('strip-ansi');
-const uuid = require('uuid');
+import { getInput } from "@actions/core";
+import { context, getOctokit } from "@actions/github";
+import stripAnsi from "strip-ansi";
+import { v4 } from "uuid";
 
-const { v4 } = uuid;
 const sha = context.payload.pull_request?.head.sha ?? context.sha;
-const { context } = github;
-const { getInput } = core;
 const githubToken = getInput('github-token')
 const actionName = getInput('action-name');
 const octokit = getOctokit(githubToken);
