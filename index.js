@@ -6,7 +6,7 @@ import { v4 } from "uuid";
 const sha = context.payload.pull_request?.head.sha ?? context.sha;
 const githubToken = getInput('github-token')
 const actionName = getInput('action-name');
-const octokit = getOctokit(githubToken);
+// const octokit = getOctokit(githubToken);
 
 (
     async () => {
@@ -29,17 +29,17 @@ const octokit = getOctokit(githubToken);
 
             debug(`[output]${JSON.stringify(output, undefined, 2)}`);
                 
-            return octokit
-                .rest
-                .checks
-                .create({
-                    ...context.repo,
-                    head_sha: sha,
-                    name: stripAnsi(actionName),
-                    conclusion: 'success',
-                    external_id: v4(),
-                    output
-                })
+            // return octokit
+            //     .rest
+            //     .checks
+            //     .create({
+            //         ...context.repo,
+            //         head_sha: sha,
+            //         name: stripAnsi(actionName),
+            //         conclusion: 'success',
+            //         external_id: v4(),
+            //         output
+            //     })
 
         } catch (error) {
             setFailed(error.message);
