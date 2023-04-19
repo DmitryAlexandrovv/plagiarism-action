@@ -1,4 +1,4 @@
-import { getInput } from "@actions/core";
+import { getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import stripAnsi from "strip-ansi";
 import { v4 } from "uuid";
@@ -42,7 +42,7 @@ const octokit = getOctokit(githubToken);
                 })
 
         } catch (error) {
-            core.setFailed(error.message);
+            setFailed(error.message);
         }
     }
 
