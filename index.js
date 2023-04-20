@@ -30,7 +30,7 @@ const actionName = getInput('action-name');
 
             console.log(123);
 
-            fs.readdir(testFolder, (err, files) => {
+            fs.readdir('./', (err, files) => {
                 files.forEach(file => {
                     console.log(file);
                 });
