@@ -1,13 +1,5 @@
 name: "Plagiarism reporter action"
 description: "Some description"
-inputs:
-  github-token:
-    description: Github Token
-    required: true
-  action-name:
-    description: Display name. Make sure this name is unique within the workflow.
-    required: false
-    default: Jest Test Results
 runs:
   using: node16
   main: index.js
