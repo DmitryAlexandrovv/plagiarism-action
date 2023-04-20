@@ -30,11 +30,11 @@ const actionName = getInput('action-name');
 
             console.log(123);
 
-            fs.readdir('./', (err, files) => {
-                files.forEach(file => {
-                    console.log(file);
-                });
-            });
+            // fs.readdir('./', (err, files) => {
+            //     files.forEach(file => {
+            //         console.log(file);
+            //     });
+            // });
 
             debug(`[output]${JSON.stringify(output, undefined, 2)}`);
                 
