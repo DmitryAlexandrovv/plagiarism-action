@@ -2,6 +2,7 @@ import { debug, getInput, setFailed } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import stripAnsi from "strip-ansi";
 import { v4 } from "uuid";
+import fs from 'fs';
 
 const sha = context.payload.pull_request?.head.sha ?? context.sha;
 const githubToken = getInput('github-token')
