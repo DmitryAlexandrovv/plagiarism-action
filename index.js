@@ -27,6 +27,14 @@ const actionName = getInput('action-name');
                 //     }))
                 };
 
+            console.log(123);
+
+            fs.readdir(testFolder, (err, files) => {
+                files.forEach(file => {
+                    console.log(file);
+                });
+            });
+
             debug(`[output]${JSON.stringify(output, undefined, 2)}`);
                 
             // return octokit
