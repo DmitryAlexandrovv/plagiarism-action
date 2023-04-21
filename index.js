@@ -11,7 +11,7 @@ import fs from 'fs';
 
             const resultTableText = JSON.parse(data).reduce((acc, compareResult) => {
                 const tableStart = `|Подозрение на плагиат в строках|${compareResult.file}|\n|:-----------------------------:|:---------------------:|`
-                return acc + '\n' + compareResult.comparedFiles.reduce((innerAcc, { file, result }) => {
+                return acc + '\n\n' + compareResult.comparedFiles.reduce((innerAcc, { file, result }) => {
                     return `${innerAcc}\n|           ${file}           |   ${result}   |`;
                 }, tableStart);
             }, '');
