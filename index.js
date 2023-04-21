@@ -7,6 +7,8 @@ import fs from 'fs';
             const data = fs.readFileSync('./plag.json', { encoding:'utf8', flag:'r' });
             console.log(data);
 
+            return data;
+
         } catch (error) {
             setFailed(error.message);
         }
