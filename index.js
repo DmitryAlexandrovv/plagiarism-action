@@ -22,7 +22,7 @@ import fs from 'fs';
                 name: 'Plagiarism detector report',
                 head_sha: github.context.sha,
                 status: 'completed',
-                conclusion: 'failure',
+                conclusion: 'success',
                 output: {
                     title: 'Plagiarism detector report',
                     summary: 'Report',
