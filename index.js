@@ -9,8 +9,6 @@ import fs from 'fs';
             const token = core.getInput('repo-token');
             const octokit = new github.getOctokit(token);
 
-            console.log(data);
-
             const resultTableText = JSON.parse(data).reduce((acc, compareResult) => {
                 const tableStart = `
                     |Подозрение на плагиат в строках|${compareResult.file}|
@@ -23,6 +21,8 @@ import fs from 'fs';
                     `;
                 }, tableStart);
             }, '');
+
+            console.log(resultTableText);
 
             const check = await octokit.rest.checks.create({
                 owner: github.context.repo.owner,
