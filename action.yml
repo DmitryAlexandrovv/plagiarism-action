@@ -3,3 +3,9 @@ description: "Some description"
 runs:
   using: node16
   main: index.js
+inputs:
+  repo-token:
+    type: string
+    description: "Github Personal Access Token"
+    required: true
+    default: ${{github.token}}
