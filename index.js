@@ -22,8 +22,6 @@ import fs from 'fs';
                 }, tableStart);
             }, '');
 
-            console.log(resultTableText);
-
             const check = await octokit.rest.checks.create({
                 owner: github.context.repo.owner,
                 repo: github.context.repo.repo,
@@ -33,6 +31,7 @@ import fs from 'fs';
                 conclusion: 'failure',
                 output: {
                     title: 'Plagiarism detector report',
+                    summary: 'Report',
                     text: resultTableText,
                 }
             });
