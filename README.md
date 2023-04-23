@@ -1,7 +1,8 @@
 # plagiarism-reporter
 
 Этот [Github Action](https://github.com/features/actions) показывает результаты работы библиотеки plagiarism-detector в виде таблицы.
-Как это выглядит 
+
+Как это выглядит: 
 ![](assets/report-example.png)
 ## Пример:
 ```yaml
