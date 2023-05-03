@@ -12,7 +12,7 @@ import fs from 'fs';
             const resultTableText = JSON.parse(data).reduce((acc, compareResult) => {
                 const tableStart = `|Подозрение на плагиат в строках|${compareResult.file}|\n|:-----------------------------:|:---------------------:|`
                 return acc + '\n\n' + compareResult.comparedFiles.reduce((innerAcc, { file, result }) => {
-                    return `${innerAcc}\n|           **${file}**           |   lines: ${result.plagged_lines}, sim: ${result.similarity}   |`;
+                    return `${innerAcc}\n|           **${file}**           |   lines: ${result}   |`;
                 }, tableStart);
             }, '');
 
